@@ -1,13 +1,13 @@
-import { useState } from "react";
-import { useRecoilValue } from "recoil";
-import { membersState } from "../../atoms/Recoils_Member";
-
 function ContactListItem(props : any) {
+
+  const changeId = (id : number) => {
+    props.setSelectedId(id);
+  }
 
   return (
     <>
       <li>
-        <button type="button">{props.name}</button>
+        <button type="button" onClick={() => changeId(props.member.id)}>{props.member.name}</button>
       </li>
     </>
   );  

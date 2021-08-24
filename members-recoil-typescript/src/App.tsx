@@ -3,6 +3,7 @@ import './App.css';
 import ContactInformation from './views/ContactInformation';
 
 function App() {
+
   return (
     <>
       <RecoilRoot>

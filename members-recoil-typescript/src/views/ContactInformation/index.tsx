@@ -1,15 +1,20 @@
+import { useState } from "react";
 import Details from "../Details";
 import SearchAndList from "../SearchAndList";
 import Subject from "../Subject";
 
 function ContactInformation(props : any) {
+
+  // member 이름
+  const [selectedId, setSelectedId] = useState();
+
   return (
     <>
       <div className="container">
         <Subject/>
         <div className="contact-wrap">
-          <SearchAndList/>
-          <Details/>
+          <SearchAndList setSelectedId={setSelectedId}/>
+          <Details selectedId={selectedId} />
         </div>
       </div>
     </>

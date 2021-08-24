@@ -6,7 +6,7 @@ function SearchAndList(props : any) {
     <>
       <div className="col left">
         <SearchBox/>
-        <ContactList/>
+        <ContactList setSelectedId={props.setSelectedId} />
       </div>
     </>
   );  
