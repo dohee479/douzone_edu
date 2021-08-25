@@ -2,6 +2,7 @@ function ContactListItem(props : any) {
 
   const changeId = (id : number) => {
     props.setSelectedId(id);
+    props.setDivision('');
   }
 
   return (

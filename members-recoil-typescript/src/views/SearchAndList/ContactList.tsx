@@ -12,7 +12,7 @@ function ContactList(props : any) {
         <ul>
           {
             members.map(member => 
-            <ContactListItem key={member.id} member={member} setSelectedId={props.setSelectedId}/>)
+            <ContactListItem key={member.id} member={member} setSelectedId={props.setSelectedId} setDivision={props.setDivision}/>)
           }
         </ul>
       </div>

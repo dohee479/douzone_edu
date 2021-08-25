@@ -5,8 +5,8 @@ function SearchAndList(props : any) {
   return (
     <>
       <div className="col left">
-        <SearchBox setSelectedId={props.setSelectedId}/>
-        <ContactList setSelectedId={props.setSelectedId} />
+        <SearchBox setSelectedId={props.setSelectedId} setDivision={props.setDivision}/>
+        <ContactList setSelectedId={props.setSelectedId} setDivision={props.setDivision}/>
       </div>
     </>
   );  
