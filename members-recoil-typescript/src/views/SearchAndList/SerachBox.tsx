@@ -1,17 +1,17 @@
 import React from "react";
-import { useSetRecoilState } from "recoil";
-import { keywordState } from "../../atoms/Recoils_Member";
-// import { searchedMembersState } from "../../atoms/Recoils_Member";
+import { useRecoilValue, useSetRecoilState } from "recoil";
+import { membersState, memberTypes, searchResultsState } from "../../atoms/Recoils_Member";
 
 function SearchBox(props : any) {
 
-  // const [keyword, setKeyword] = useState<string>('');
-  const setKeywordState = useSetRecoilState(keywordState);
-  // const setSearchedMembers = useRecoilState(searchedMembersState);
+  const members = useRecoilValue<memberTypes[]>(membersState);
+  const setSearchResults = useSetRecoilState<memberTypes[]>(searchResultsState);
 
   const search = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setKeywordState(event.target.value);
+    setSearchResults(members.filter(member => member.name.includes(event.target.value)));
+    props.setSelectedId("");
   }
+
   return (
     <>
       <div className="search-box">

@@ -1,17 +1,17 @@
 import { useRecoilValue } from "recoil";
-import { searchedMembersState } from "../../atoms/Recoils_Member";
+import { memberTypes, searchResultsState } from "../../atoms/Recoils_Member";
 import ContactListItem from "./ContactListItem";
 
 function ContactList(props : any) {
 
-  const members = useRecoilValue(searchedMembersState);
+  const members = useRecoilValue<memberTypes[]>(searchResultsState);
 
   return (
     <>
       <div className="contact-list">
         <ul>
           {
-            members.map((member, index) => 
+            members.map(member => 
             <ContactListItem key={member.id} member={member} setSelectedId={props.setSelectedId}/>)
           }
         </ul>

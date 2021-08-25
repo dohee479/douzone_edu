@@ -6,7 +6,7 @@ import Subject from "../Subject";
 function ContactInformation(props : any) {
 
   // member 이름
-  const [selectedId, setSelectedId] = useState();
+  const [selectedId, setSelectedId] = useState<number>();
 
   return (
     <>

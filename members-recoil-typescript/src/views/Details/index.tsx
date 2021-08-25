@@ -4,12 +4,16 @@ import { membersState, memberTypes } from "../../atoms/Recoils_Member";
 
 function Details(props : any) {
 
-  const members = useRecoilValue(membersState);
+  const members = useRecoilValue<memberTypes[]>(membersState);
   
   const [member, setMember] = useState<memberTypes>();
 
   useEffect(() => {
-    setMember(members.find(memberRecord => memberRecord.id === props.selectedId))
+    if (props.selectedId) {
+      setMember(members.find(memberRecord => memberRecord.id === props.selectedId))
+    } else {
+      setMember(undefined);
+    }
   }, [members, props.selectedId])
 
   return (
