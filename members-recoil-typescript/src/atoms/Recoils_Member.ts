@@ -2,9 +2,9 @@ import { atom, selector } from "recoil";
 import { members } from "../data/data";
 
 export interface memberTypes {
-  id: number,
+  id: number | null, 
   name: string,
-  department: string,
+  department: string
   phone: string,
   mail: string
 }
@@ -30,9 +30,8 @@ export const searchedMembersState = selector<memberTypes[]>({
   }
 });
 
-
 // 검색결과 리스트(selector 사용 X)
 export const searchResultsState = atom<memberTypes[]>({
   key: 'searchResultsState',
-  default: members
+  default: membersState
 })

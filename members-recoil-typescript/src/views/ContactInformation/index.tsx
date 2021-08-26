@@ -19,9 +19,9 @@ function ContactInformation(props : any) {
         <div className="contact-wrap">
           <SearchAndList setSelectedId={setSelectedId} setDivision={setDivision} />
           {
-            division === 'add' || division === 'update' ? <Form division={division} />
+            division === 'add' || division === 'update' ? <Form division={division} selectedId={selectedId} setDivision={setDivision}/>
             :
-            <Details selectedId={selectedId} />
+            <Details selectedId={selectedId} setDivision={setDivision}/>
           }
         </div>
       </div>

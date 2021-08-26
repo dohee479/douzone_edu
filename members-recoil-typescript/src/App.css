@@ -140,7 +140,7 @@ button {
 }
 
 .btn {
-  background: #1aab8a;
+  background: rgb(54, 162, 235);
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -167,4 +167,39 @@ button {
   float: left;
   padding-left: 10px;
   position: relative;
+}
+
+.commonBtn {
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  height: 40px;
+  top: 20%;
+  left: 70%;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 16px;
+}
+
+.saveBtn {
+  background: rgb(153, 102, 255);
+  height: 40px;
+  width: 100%;
+  margin-top: 16px;
+}
+
+.updateBtn {
+  background: rgb(75, 192, 192);
+  width: 40%;
+}
+
+.deleteBtn {
+  background: rgb(255, 99, 132);
+  width: 40%;
+}
+
+.btn-wrap {
+  display: flex;
+  justify-content: space-around;
 }
